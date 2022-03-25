@@ -1,0 +1,153 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  /* background-color: #212529; */
+  background-color: #303846;
+
+  align-items: center;
+  height: 6rem;
+  padding: 0 4.8rem;
+  box-shadow: 0 1.5rem 3rem rgb(0 0 0 / 10%);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 123;
+}
+
+.sticky {
+  position: fixed;
+  background-color: red;
+}
+
+.logo {
+  font-size: 1.8rem;
+  color: #f5f6f7;
+}
+
+.link-logo {
+  text-decoration: none;
+}
+
+.main-nav-list {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  gap: 4.8rem;
+}
+
+.main-nav-list .main-nav-link:link,
+.main-nav-list .main-nav-link:visited {
+  display: inline-block;
+  text-decoration: none;
+  color: #f5f6f7;
+  font-weight: 500;
+  font-size: 1.8rem;
+  transition: all 0.3s;
+}
+.main-nav-list .main-nav-link:hover,
+.main-nav-list .main-nav-link:active,
+.main-nav-list .main-nav-link.active {
+  color: #4f8fda;
+  padding-bottom: 0.3rem;
+  border-bottom: 4.3px solid #4f8fda;
+}
+
+.btn-mobile-nav {
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: none;
+  z-index: 123;
+}
+
+.icon-mobile-nav {
+  width: 4.8rem;
+  height: 4.8rem;
+
+  color: #f5f6f7;
+}
+
+@media (max-width: 75em) {
+  .header {
+    padding: 3.2rem;
+  }
+  .main-nav-list {
+    gap: 3.2rem;
+  }
+}
+
+@media (max-width: 59em) {
+  .btn-mobile-nav {
+    display: block;
+  }
+
+  .main-nav {
+    background-color: #303846;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    transform: translateX(100%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in;
+    z-index: 123;
+    /* Hide navigation */
+    /* Allows NO transitions at all */
+    /* display: none; */
+
+    /* 1) Hide it visually */
+    opacity: 0;
+
+    /* 2) Make it unaccessible to mouse and keyboard */
+    pointer-events: none;
+
+    /* 3) Hide it from screen readers */
+    visibility: hidden;
+  }
+
+  .main-nav-open {
+    background-color: #303846;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    transform: translateX(0);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in;
+    z-index: 123;
+    /* Hide navigation */
+    /* Allows NO transitions at all */
+    /* display: none; */
+
+    /* 1) Hide it visually */
+    opacity: 1;
+
+    /* 2) Make it unaccessible to mouse and keyboard */
+    /* pointer-events: none; */
+
+    /* 3) Hide it from screen readers */
+    visibility: visible;
+  }
+
+  .main-nav-list {
+    flex-direction: column;
+    gap: 4.8rem;
+    z-index: 123;
+  }
+
+  .main-nav-link:link,
+  .main-nav-link:visited {
+    font-size: 3rem;
+    z-index: 123;
+  }
+}

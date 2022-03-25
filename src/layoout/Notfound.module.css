@@ -1,0 +1,9 @@
+.notfound {
+  margin-top: 20rem;
+  height: 50vh;
+}
+
+.notfound-text {
+  font-size: 3.6rem;
+  text-align: center;
+}
